@@ -64,15 +64,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>Product Showcase</h1>
+        <p>Katras 2 sekundes precēm kurām ir vēl kāda bilde mainās.</p>
+        <h1>Pieejamās preces</h1>
         <div class="products-grid">
             <div class="product">
-                <img src="images/Product1.png" alt="Product 1">
+                <div class="slideshow">
+                    <img src="https://cdn.tet.lv/tetveikals-prd-images/product_popup_image_webp/products/portativais-dators-hp-laptop-15-fc0005ny-15-6-moonlight-blue-7m1m6ea-b1r-5-646db511c9e73.jpg.webp" alt="Product 1">
+                </div>
                 <h2>Product 1</h2>
                 <p>This is a description for Product 1. You can customize it as you like.</p>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 2">
+                <div class="slideshow">
+                    <img src="https://via.placeholder.com/300" alt="Product 2 Image 1">
+                    <img src="https://via.placeholder.com/300" alt="Product 2 Image 2">
+                    <img src="https://via.placeholder.com/300" alt="Product 2 Image 3">
+                </div>
                 <h2>Product 2</h2>
                 <p>This is a description for Product 2. You can customize it as you like.</p>
             </div>
@@ -87,7 +94,10 @@
                 <p>This is a description for Product 4. You can customize it as you like.</p>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 5">
+                <div class="slideshow">
+                    <img src="https://via.placeholder.com/300" alt="Product 5 Image 1">
+                    <img src="https://via.placeholder.com/300" alt="Product 5 Image 2">
+                </div>
                 <h2>Product 5</h2>
                 <p>This is a description for Product 5. You can customize it as you like.</p>
             </div>
@@ -102,7 +112,10 @@
                 <p>This is a description for Product 7. You can customize it as you like.</p>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 8">
+                <div class="slideshow">
+                    <img src="https://via.placeholder.com/300" alt="Product 8 Image 1">
+                    <img src="https://via.placeholder.com/300" alt="Product 8 Image 2">
+                </div>
                 <h2>Product 8</h2>
                 <p>This is a description for Product 8. You can customize it as you like.</p>
             </div>
@@ -112,61 +125,47 @@
                 <p>This is a description for Product 9. You can customize it as you like.</p>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 10">
+                <div class="slideshow">
+                    <img src="https://via.placeholder.com/300" alt="Product 10 Image 1">
+                    <img src="https://via.placeholder.com/300" alt="Product 10 Image 2">
+                    <img src="https://via.placeholder.com/300" alt="Product 10 Image 3">
+                </div>
                 <h2>Product 10</h2>
                 <p>This is a description for Product 10. You can customize it as you like.</p>
             </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 11">
-                <h2>Product 11</h2>
-                <p>This is a description for Product 11. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 12">
-                <h2>Product 12</h2>
-                <p>This is a description for Product 12. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 13">
-                <h2>Product 13</h2>
-                <p>This is a description for Product 13. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 14">
-                <h2>Product 14</h2>
-                <p>This is a description for Product 14. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 15">
-                <h2>Product 15</h2>
-                <p>This is a description for Product 15. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 16">
-                <h2>Product 16</h2>
-                <p>This is a description for Product 16. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 17">
-                <h2>Product 17</h2>
-                <p>This is a description for Product 17. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 18">
-                <h2>Product 18</h2>
-                <p>This is a description for Product 18. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 19">
-                <h2>Product 19</h2>
-                <p>This is a description for Product 19. You can customize it as you like.</p>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/300" alt="Product 20">
-                <h2>Product 20</h2>
-                <p>This is a description for Product 20. You can customize it as you like.</p>
-            </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var slideshows = document.querySelectorAll(".slideshow");
+
+            slideshows.forEach(function(slideshow) {
+                var images = slideshow.querySelectorAll("img");
+                var currentIndex = 0;
+                var totalImages = images.length;
+
+                if (totalImages > 1) {
+                    function showImage(index) {
+                        images.forEach(function(img, i) {
+                            img.style.display = "none";
+                            if (i === index) {
+                                img.style.display = "block";
+                            }
+                        });
+                    }
+
+                    // Show the first image initially
+                    showImage(currentIndex);
+
+                    // Set interval to automatically switch images
+                    setInterval(function() {
+                        currentIndex = (currentIndex + 1) % totalImages;
+                        showImage(currentIndex);
+                    }, 2000); // Change slide every 1 second (adjust as needed)
+                }
+            });
+        });
+    </script>
 </body>
 </html>
