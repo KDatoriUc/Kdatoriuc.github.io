@@ -184,6 +184,11 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem('reloaded')) {
+                localStorage.setItem('reloaded', 'true');
+                location.reload();
+            }
+
             var slideshows = document.querySelectorAll(".slideshow");
 
             slideshows.forEach(function(slideshow) {
